@@ -1,95 +1,210 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import { Card, Header, Logo, Main, SaleBlock } from "./components";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="font-nunito main-bg container mx-auto mt-7">
+      <Header />
+      <Main />
+      <div className="py-[65px]">
+        <div className="mb-[70px] text-[32px] font-semibold">Что на обед?</div>
+        <div className="flex gap-[16px]">
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="py-[65px]">
+        <div className="mb-[70px] text-[32px] font-semibold">Хиты</div>
+        <div className="flex gap-[16px]">
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <SaleBlock />
+      <div className="py-[65px]">
+        <div className="mb-[70px] text-[32px] font-semibold">
+          Как мы работаем
+        </div>
+        <div className="grid grid-cols-[auto_auto_auto] grid-rows-2 justify-between gap-[31px]">
+          <div className="max-w-[296px] text-center">
+            <div className="stages arrow-right min-h-[84px]  rounded-[15px] border-2 border-[#ECA139] px-[69px] py-[15px] text-[20px] font-semibold">
+              Сделать заказ <br /> на сайте
+            </div>
+            <div>
+              Нажмите на кнопку «Заказать звонок» или добавьте в корзину и
+              введите данные
+            </div>
+          </div>
+          <div className=" stages arrow-right max-w-[296px] text-center">
+            <div className="min-h-[84px] rounded-[15px] border-2 border-[#ECA139] px-[69px] py-[15px] text-[20px] font-semibold">
+              Звонок <br /> от оператора
+            </div>
+            <div>
+              Нажмите на кнопку «Заказать звонок» или добавьте в корзину и
+              введите данные
+            </div>
+          </div>
+          <div className="max-w-[296px] text-center">
+            <div className="min-h-[84px] rounded-[15px] border-2 border-[#ECA139] px-[69px] py-[15px] text-[20px] font-semibold">
+              Готовим
+            </div>
+            <div>
+              Нажмите на кнопку «Заказать звонок» или добавьте в корзину и
+              введите данные
+            </div>
+          </div>
+          <div>
+            <Image
+              src={"/images/imgs-food.png"}
+              width={300}
+              height={141}
+              alt="food"
+            />
+          </div>
+          <div className="max-w-[296px] text-center">
+            <div className="min-h-[84px] rounded-[15px] border-2 border-[#ECA139] px-[69px] py-[15px] text-[20px] font-semibold">
+              Доставка
+            </div>
+            <div>
+              Нажмите на кнопку «Заказать звонок» или добавьте в корзину и
+              введите данные
+            </div>
+          </div>
+        </div>
+        <div className="mt-[32px] flex items-center justify-between">
+          <div className="max-w-[764px] rounded-[15px] bg-[#F9F9F9] px-[50px] py-[28px]">
+            <div className="mb-[16px] flex gap-[12px]">
+              <Image
+                src="/icons/attention.svg"
+                width={25}
+                height={25}
+                alt="attention"
+              />
+              <span className="text-[20px]">Важная информация:</span>
+            </div>
+            <div className="text-[#BFBFBF]">
+              Просим Вас оформлять заказ до 10 часов. Это поможет нам рассчитать
+              необходимое количество обедов. Доставка осуществляется от 5
+              комплексных обедов на адрес. Вы можете сделать заказ на следующий
+              рабочий день, на всю предстоящую рабочую неделю или же на целый
+              месяц
+              <br /> Спасибо за понимание!
+            </div>
+          </div>
+          <div>
+            <Image
+              src="/images/decor-food-2.png"
+              width={344}
+              height={151}
+              alt="decor-food"
+            />
+          </div>
+        </div>
       </div>
+      <div className="bg-[#F9F9F9] py-[130px]">
+        <div className="mb-[70px] text-[32px] font-semibold">Наши услуги</div>
+        <div className="flex flex-wrap gap-[16px]">
+          <div className="max-w-[608px] rounded-[15px] bg-[#fff] px-[40px] py-[40px]">
+            <Image
+              src="/icons/service-1.svg"
+              width={70}
+              height={70}
+              alt="service-1"
+            />
+            <div>Комплексное меню</div>
+            <div>
+              Вы можете больше не тратить время на приготовление обедов — мы это
+              сделаем за вас! Наши опытные повара приготовят комплексный обед из
+              свежих продуктов и доставят в указанное время по выгодной цене
+            </div>
+            <div>Перейти в раздел</div>
+          </div>
+          <div className="max-w-[608px] rounded-[15px] bg-[#fff] px-[40px] py-[40px]">
+            <Image
+              src="/icons/service-1.svg"
+              width={70}
+              height={70}
+              alt="service-1"
+            />
+            <div>Комплексное меню</div>
+            <div>
+              Вы можете больше не тратить время на приготовление обедов — мы это
+              сделаем за вас! Наши опытные повара приготовят комплексный обед из
+              свежих продуктов и доставят в указанное время по выгодной цене
+            </div>
+            <div>Перейти в раздел</div>
+          </div>
+          <div className="max-w-[608px] rounded-[15px] bg-[#fff] px-[40px] py-[40px]">
+            <Image
+              src="/icons/service-1.svg"
+              width={70}
+              height={70}
+              alt="service-1"
+            />
+            <div>Комплексное меню</div>
+            <div>
+              Вы можете больше не тратить время на приготовление обедов — мы это
+              сделаем за вас! Наши опытные повара приготовят комплексный обед из
+              свежих продуктов и доставят в указанное время по выгодной цене
+            </div>
+            <div>Перейти в раздел</div>
+          </div>
+        </div>
+      </div>
+      <div className="py-[130px]">
+        <div className="mb-[70px] text-[32px] font-semibold">
+          Наши постоянные клиенты
+        </div>
+        <div className="flex items-center justify-between gap-[70px]">
+          <Image
+            src="/images/hoffmann-group.png"
+            width={247}
+            height={36}
+            alt="hoffmann"
+          />
+          <Image src="/images/gotak.png" width={140} height={59} alt="gotak" />
+          <Image
+            src="/images/medikum.png"
+            width={200}
+            height={51}
+            alt="medikum"
+          />
+          <Image
+            src="/images/total-terminal.png"
+            width={199}
+            height={45}
+            alt="hoffmann"
+          />
+          <Image
+            src="/images/jonas.png"
+            width={166}
+            height={117}
+            alt="hoffmann"
+          />
+        </div>
+      </div>
+      <footer className="flex justify-between pb-[50px] pt-[36px]">
+        <Logo />
+        <div>
+          <div>Свяжитесь с нами для заказа</div>
+          <input placeholder="Имя" className="block" />
+          <input placeholder="Имя" className="block" />
+          <button className="shadow-button-call bg-orange rounded-[15px] px-[100px] py-[14px] text-[18px] font-semibold text-[#fff]">
+            Заказать звонок
+          </button>
+        </div>
+        <div className="w-[450px]">
+          <div>Контакты</div>
+          <div>+7 (911) 846-46-29</div>
+          <div>
+            Кафе PitLane, Россия, Санкт-Петербург, пр. Большевиков д. 60 к.{" "}
+          </div>
+          <div>pitLane-cafe@yandex.ru</div>
+        </div>
+      </footer>
     </main>
-  )
+  );
 }
