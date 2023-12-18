@@ -1,22 +1,25 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Logo } from "../logo";
 
 export const Header = () => {
   return (
-    <header className="grid grid-cols-2">
+    <header className="flex justify-between">
       <div className="flex items-center">
         <Logo />
         <div className="ml-[69px] flex items-center text-sm">
           <Image src="/icons/map.svg" alt={"Map"} width={19} height={10} />
-          <span className="ml-1 font-bold">Санкт-Петербург</span>
+          <span className="ml-1 font-bold text-[#BFBFBF]">Санкт-Петербург</span>
         </div>
       </div>
-      <div className="flex items-center justify-around">
+      <div className="flex items-center justify-between gap-[75px]">
         <nav className="flex gap-[60px] font-bold">
-          <a>Главная</a>
-          <a>Меню</a>
-          <a>О нас</a>
-          <a>Контакты</a>
+          <Link href="/">Главная</Link>
+          <Link href="/menu">Меню</Link>
+          <Link href="/about">О нас</Link>
+          <Link href="#footer" scroll={false}>
+            Контакты
+          </Link>
         </nav>
         <div>
           <Image src="/icons/shop.svg" alt={"Shop"} width={23} height={2} />

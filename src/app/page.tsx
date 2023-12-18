@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Card, Header, Logo, Main, SaleBlock } from "./components";
+import { Card, Footer, Header, Logo, Main, SaleBlock } from "./components";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="font-nunito main-bg container mx-auto mt-7">
+    <main className="main-bg container mx-auto mt-7 font-nunito">
+      <Header />
       <Main />
       <div className="py-[65px]">
         <div className="mb-[70px] text-[32px] font-semibold">Что на обед?</div>
@@ -185,7 +186,7 @@ export default function Home() {
           />
         </div>
       </div>
-      
+      <Footer />
     </main>
   );
 }
