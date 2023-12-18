@@ -17,6 +17,15 @@ module.exports = {
     boxShadow: {
       "button-call": "0px 18px 34px 0px rgba(236, 161, 57, 0.25)",
     },
+    container: {
+      screens: {
+        sm: "600px",
+        md: "728px",
+        lg: "984px",
+        xl: "1240px",
+        "2xl": "1240px",
+      },
+    },
   },
   plugins: [],
 };

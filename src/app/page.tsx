@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Card, Header, Logo, Main, SaleBlock } from "./components";
+import { Card, Footer, Header, Logo, Main, SaleBlock } from "./components";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="font-nunito main-bg container mx-auto mt-7">
+    <main className="main-bg container mx-auto mt-7 font-nunito">
       <Header />
       <Main />
       <div className="py-[65px]">
@@ -186,25 +186,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <footer className="flex justify-between pb-[50px] pt-[36px]">
-        <Logo />
-        <div>
-          <div>Свяжитесь с нами для заказа</div>
-          <input placeholder="Имя" className="block" />
-          <input placeholder="Имя" className="block" />
-          <button className="shadow-button-call bg-orange rounded-[15px] px-[100px] py-[14px] text-[18px] font-semibold text-[#fff]">
-            Заказать звонок
-          </button>
-        </div>
-        <div className="w-[450px]">
-          <div>Контакты</div>
-          <div>+7 (911) 846-46-29</div>
-          <div>
-            Кафе PitLane, Россия, Санкт-Петербург, пр. Большевиков д. 60 к.{" "}
-          </div>
-          <div>pitLane-cafe@yandex.ru</div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }

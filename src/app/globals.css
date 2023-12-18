@@ -30,6 +30,10 @@
     position: relative;
   }
 
+  .border-tr {
+    border-color: transparent;
+  }
+
   .main-bg::before {
     position: absolute;
     content: "";
